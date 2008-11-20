@@ -19,7 +19,8 @@ module UtilityBelt
           Kernel.system("open #{url}")
         when :windows
           Kernel.system("start #{url}")
-        #when :linux
+        when :linux
+          Kernel.system("xdg-open #{url}")
         else
           puts "Sorry, don't know how to open an URL from the command line on your platform"
         end

@@ -22,7 +22,27 @@ module UtilityBelt
         IO.popen('pbcopy', 'w+') {|clipboard| clipboard.write(stuff)}
       end
       @@implemented = true
-  
+   
+    when :linux
+      
+      if File.exist?('/usr/bin/xsel') 
+             || File.exist?('/usr/local/bin/xsel')
+             || File.exist?('/usr/X11/bin/xsel')
+             
+        def self.read
+          IO.popen('xsel') {|clipboard| clipboard.read}
+        end
+      
+        def self.write(stuff)
+          IO.popen('xsel -i', 'w+') {|clipboard| clipboard.write(stuff)}
+        end
+        @@implemented = true
+      else
+        raise "You need to install package xsel\n 
+              ubuntu,debian: sudo apt-get install xsel\n
+              Gentoo: sudo emerge xsel\n
+              fedora,centos,opensuse: yum install xsel\n"
+      end
     when :mswin
 
       begin

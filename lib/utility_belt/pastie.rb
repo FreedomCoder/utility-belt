@@ -20,6 +20,8 @@ module UtilityBelt
         Kernel.system("open #{pastie_url}")
       when :mswin
         Kernel.system("start #{pastie_url}")
+      when :linux
+        kernel.system("xdg-open #{pastie_url}")
       end
 
       return pastie_url
