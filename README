@@ -1,6 +1,6 @@
 == Utility Belt
 
-by Giles Bowkett (and many others)
+by Giles Bowkett (and many others) <-- and now me (Matias Brutti ;))
 
 http://utilitybelt.rubyforge.org
 
@@ -17,8 +17,8 @@ sudo gem install utility_belt
 == FEATURES
 
 * Interactively edit IRB code in your preferred text editor
-* Read from and write to OS X clipboard
-* Post your code to Pastie with one command (OS X only)
+* Read from and write to OS X,windows and linux clipboard
+* Post your code to Pastie with one command (Now supports Linux)
 * Kick-ass Unix-style history buffer
 * Write command history to file or vi
 * Grep classes and methods for strings
@@ -26,7 +26,7 @@ sudo gem install utility_belt
 * Finder shortcuts for Rails console
 * Upload shortcut for Amazon S3
 * Command-line Amazon S3 upload script
-* Command-line Google shortcut (OS X only)
+* Command-line Google shortcut (Now supports Linux)
 * Auto-indentation
 * _ special variable (like Unix shell var !!)
 * Extremely basic themes for Wirble syntax coloring
