@@ -16,9 +16,9 @@ module UtilityBelt
           response = http.request(request, "status=#{URI.escape(message)}")
           case response
             when Net::HTTPSuccess, Net::HTTPRedirection
-                puts "Success! message: #{message} uploaded"
+                return "Success! message: #{message} uploaded"
             else
-                response.error!
+                return response.error!
           end
         end
       end

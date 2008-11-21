@@ -1,6 +1,6 @@
 == Utility Belt
 
-by Giles Bowkett (and many others) <-- and now me (Matias Brutti ;))
+by Giles Bowkett (and many others)
 
 http://utilitybelt.rubyforge.org
 
@@ -35,6 +35,7 @@ sudo gem install utility_belt
 * Add and subtract Hashes with + and -
 * Grammatically-correct is_an? method - no more "is_a? Array" statements
 * One-character exit command
+* Twitt your pastie or other messages from the irb.
 
 == COMMUNITY EFFORT
 
@@ -75,7 +76,7 @@ If you're wondering why the method name is so ridiculously long, there's a story
 
 http://gilesbowkett.blogspot.com/2007/12/utility-belt-vs-rails.html
 
-== Read from and write to OS X clipboard
+== Read from and write to OS X,Windows or Linux clipboard
 
 To read:
 
@@ -85,7 +86,7 @@ To write:
 
   MacClipboard.write("something")
 
-== Post your code to Pastie with one command (OS X only)
+== Post your code to Pastie with one command
 
 First copy some code into your clipboard, or put it there with the MacClipboard.write() class method. Then use the command:
 
@@ -130,6 +131,17 @@ At some point it'll probably be a good idea to add regex support for these metho
 regular IRB: "verbose" or "v" / "quiet" or "q"
 
 Rails: "log" method turns verbosity on, there isn't actually any method for turning it off. (Might add one at some point.)
+
+== Twitty lets you twitt your partie links, Clipboard stuff or messages from irb.
+
+This could go into the .irbrc
+>> ENV[TWIITER_USER] = "username"
+>> ENV[TWITTER_PWD] = "password"
+
+Then just, 
+
+>> twitt "messsage"
+>> twitt pastie
 
 == Finder shortcuts for Rails console
 
@@ -307,7 +319,6 @@ Because life is too short to type whole words.
 * Wirble
 * Amazon S3
 * Platform
-* Some features require OS X
 
 == LICENSE
 
@@ -327,6 +338,7 @@ Because life is too short to type whole words.
   Portions Copyright (c) 2006-2007 Rick DeNatale
   Portions Copyright (c) 2006-2007 Projectionist (Marcel Molina? Chad Fowler?)
   Portions Copyright (c) 2006-2007 Dan Yoder
+  Portions Copyright (c) 2008 Matias Brutti
 
   Permission is hereby granted, free of charge, to any person obtaining
   a copy of this software and associated documentation files (the
