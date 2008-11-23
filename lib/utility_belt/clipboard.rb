@@ -25,9 +25,7 @@ module UtilityBelt
    
     when :linux
       
-      if File.exist?('/usr/bin/xsel') 
-             || File.exist?('/usr/local/bin/xsel')
-             || File.exist?('/usr/X11/bin/xsel')
+      if File.exist?('/usr/bin/xsel') || File.exist?('/usr/local/bin/xsel') || File.exist?('/usr/X11/bin/xsel')
              
         def self.read
           IO.popen('xsel') {|clipboard| clipboard.read}

@@ -9,7 +9,7 @@ SPEC = Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "A grab-bag of IRB power user madness."
   s.files = Dir.glob("**/*")
-  %w{amazon google pastie}.each do |command_line_utility|
+  %w{amazon google pastie twitt}.each do |command_line_utility|
     s.executables << command_line_utility
   end
   s.require_path = "lib"
