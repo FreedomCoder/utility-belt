@@ -25,3 +25,7 @@ module UtilityBelt
     end
   end
 end
+
+class Object
+  include UtilityBelt::Twitty
+end if Object.const_defined? :IRB
