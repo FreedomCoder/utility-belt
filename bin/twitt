@@ -4,7 +4,7 @@
 UtilityBelt.equip(:twitty)
 include UtilityBelt::Twitty
 
-if ARGV[0] == "-f" OR ARGV[0] == "--fetch"
+if ARGV[0] == "-f" || ARGV[0] == "--fetch"
   fetch_twitt
 else  
   twitt(ARGV[0])
