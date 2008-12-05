@@ -137,11 +137,23 @@ Rails: "log" method turns verbosity on, there isn't actually any method for turn
 This could go into the .irbrc
 >> ENV[TWIITER_USER] = "username"
 >> ENV[TWITTER_PWD] = "password"
+otherwise you could also set them up in the shell it self using the export command. 
 
 Then just, 
 
 >> twitt "messsage"
 >> twitt pastie
+
+or in the CLI:
+twitt message
+
+To fetch twitt,
+
+>> fetch_twitt
+
+or in the CLI:
+% twitt -f
+
 
 == Finder shortcuts for Rails console
 
