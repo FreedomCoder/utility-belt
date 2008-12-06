@@ -34,7 +34,7 @@ module UtilityBelt
         case response
           when Net::HTTPSuccess, Net::HTTPRedirection
             twitts = JSON.parse(response.body)
-            twitts[0..(number-1|| twitts.length)].each do |twitt|
+            twitts[0..((number-1 unless number.nil?) || twitts.length)].each do |twitt|
               screen_name = twitt["user"]["screen_name"]
               text = twitt["text"]
               case Platform::IMPL
