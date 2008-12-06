@@ -5,7 +5,11 @@ UtilityBelt.equip(:twitty)
 include UtilityBelt::Twitty
 
 if ARGV[0] == "-f" || ARGV[0] == "--fetch"
-  fetch_twitt
+  if ARGV.length > 1
+    fetch_twitt(ARGV[1].to_i)
+  else
+    fetch_twitt
+  end
 else  
   twitt(ARGV[0])
 end

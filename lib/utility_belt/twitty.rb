@@ -25,7 +25,7 @@ module UtilityBelt
       end
     end
 
-    def fetch_twitt
+    def fetch_twitt(number=nil)
       http = Net::HTTP.new("twitter.com",80)
       http.start do |http|
         request = Net::HTTP::Get.new("/statuses/friends_timeline.json")
@@ -33,7 +33,8 @@ module UtilityBelt
         response = http.request(request)
         case response
           when Net::HTTPSuccess, Net::HTTPRedirection
-            JSON.parse(response.body).each do |twitt|
+            twitts = JSON.parse(response.body)
+            twitts[0..(number-1|| twitts.length)].each do |twitt|
               screen_name = twitt["user"]["screen_name"]
               text = twitt["text"]
               case Platform::IMPL
