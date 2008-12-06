@@ -21,35 +21,31 @@ module UtilityBelt
                 return response.error!
           end
         end
+        http.close
       end
-    end
-    def parse_response(body)
-      minih = {}
-      JSON.parse(body).each do |twitt|
-          minih[twitt["user"]["name"]] = twitt["text"]
-      end
-      minih.each_pair do |key,value| 
-        case Platform::IMPL
-        when :macosx || :linux
-          puts "\033[31m#{key}\033\[0m => \033[33m#{value}\033\[0m"
-        when :mswin
-          puts "#{key} => #{value}"
-        end
-      end
-      true
     end
 
-    def fetch_twitt
+    def fetch_twitt2
       http = Net::HTTP.new("twitter.com",80)
       http.start do |http|
         request = Net::HTTP::Get.new("/statuses/friends_timeline.json")
         request.basic_auth(ENV['TWITTER_USER'], ENV['TWITTER_PWD'])
-        response = http.request(request, "")
+        response = http.request(request)
         case response
-         when Net::HTTPSuccess, Net::HTTPRedirection
-             return parse_response(response.body)
+          when Net::HTTPSuccess, Net::HTTPRedirection
+            JSON.parse(response.body).each do |twitt|
+              screen_name = twitt["user"]["screen_name"]
+              text = twitt["text"]
+              case Platform::IMPL
+                when :macosx || :linux
+                  puts "\033[31m#{screen_name}\033\[0m => \033[33m#{text}\033\[0m"
+                when :mswin
+                   puts "#{screen_name} => #{value}"
+              end
+            end
+            return "true"
          else
-             return response.error!
+           return response.error!
         end
       end
     end
