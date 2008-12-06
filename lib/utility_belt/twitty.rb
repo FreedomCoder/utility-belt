@@ -25,7 +25,7 @@ module UtilityBelt
       end
     end
 
-    def fetch_twitt2
+    def fetch_twitt
       http = Net::HTTP.new("twitter.com",80)
       http.start do |http|
         request = Net::HTTP::Get.new("/statuses/friends_timeline.json")
