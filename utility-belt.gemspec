@@ -1,5 +1,4 @@
-require 'rubygems' 
-SPEC = Gem::Specification.new do |s| 
+Gem::Specification.new do |s|  
   s.name = "utility_belt"
   s.version = "1.1.1"
   s.author = "Giles Bowkett"
