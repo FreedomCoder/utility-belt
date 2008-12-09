@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://utilitybelt.rubyforge.org"
   s.rubyforge_project = "utility_belt"
   s.platform = Gem::Platform::RUBY
-  s.summary = "A grab-bag of IRB power user madness."
+  s.summary = "A grab-bag of IRB power user madness. (With Linux Support)"
   s.files = ["bin", "bin/amazon", "bin/google", "bin/pastie", "bin/twitt", "History.txt", "html",
    "html/andreas00.css", "html/authorship.html", "html/bg.gif", "html/front.jpg", "html/index.html",
    "html/menubg.gif", "html/menubg2.gif", "html/test.jpg", "html/usage.html", "lib",
