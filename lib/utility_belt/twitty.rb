@@ -38,7 +38,7 @@ module UtilityBelt
               screen_name = twitt["user"]["screen_name"]
               text = twitt["text"]
               case Platform::IMPL
-                when :macosx || :linux
+                when :macosx, :linux
                   puts "\033[31m#{screen_name}\033\[0m => \033[33m#{text}\033\[0m"
                 when :mswin
                    puts "#{screen_name} => #{value}"
