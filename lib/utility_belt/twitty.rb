@@ -36,12 +36,13 @@ module UtilityBelt
             twitts = JSON.parse(response.body)
             twitts[0..((number-1 unless number.nil?) || twitts.length)].each do |twitt|
               screen_name = twitt["user"]["screen_name"]
+              date = Time.parse(twitt["created_at"]).strftime("%H:%S, %d %b")
               text = twitt["text"]
               case Platform::IMPL
                 when :macosx, :linux
-                  puts "\033[31m#{screen_name}\033\[0m => \033[33m#{text}\033\[0m"
+                  puts "\033\[36m [#{date}] \033[31m#{screen_name}\033\[0m => \033[33m#{text}\033\[0m"
                 when :mswin
-                   puts "#{screen_name} => #{value}"
+                   puts "[#{date}]#{screen_name} => #{value}"
               end
             end
             return "true"
